@@ -28,7 +28,7 @@ async def on_ready():
 async def on_message(message):
 	global schoolcode
 	if message.content.startswith("!test"):
-		await gupshikbot.send_message(message.channel, "this xhit is fxcking working!!")
+		await gupshikbot.send_message(message.channel, "this is working!!")
 
 	elif message.content.startswith('!set'):
 		await gupshikbot.send_message(message.channel, "please input school code")
@@ -44,7 +44,7 @@ async def on_message(message):
 	elif message.content.startswith('!todaygupshik'):
 		text = getgupshik.loadgupshikdata(schoolcode, datetime.date.today().day)
 		if len(text) < 2:
-			await gupshikbot.send_message(message.channel, "you cannot eat gupshik today fucker")
+			await gupshikbot.send_message(message.channel, "you cannot eat gupshik today")
 		else:
 		    await gupshikbot.send_message(message.channel, text)
 
@@ -58,7 +58,7 @@ async def on_message(message):
 		else:
 			text = getgupshik.loadgupshikdata(schoolcode, int(selectedDay.content))
 			if len(text) < 2:
-				await gupshikbot.send_message(message.channel, "you cannot eat gupshik that day fucker")
+				await gupshikbot.send_message(message.channel, "you cannot eat gupshik that day")
 			else:
 				await gupshikbot.send_message(message.channel, text)
 
